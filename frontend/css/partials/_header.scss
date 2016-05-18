@@ -8,6 +8,9 @@
 	max-width: 1400px;
 	margin: auto;
 }
+.logo-link {
+	color: $darkgrey !important;
+}
 .logo-wrapper {
 	margin-top: 5px;
 	display: inline-block;
@@ -36,14 +39,37 @@
 	font-size: 0.9em;
 }
 
-nav {
+.top-nav {
 	display: inline-block;
 	float: right;
+	#navBtn {
+		color: $darkgrey;
+		&:hover, &:focus {
+			text-decoration: none;
+		}
+	}
+	.glyphicon-menu-hamburger, .break-search {
+		display: none;
+		font-size: 1.4em;
+		line-height: 80px;
+		margin-right: 5px;
+	}
+	.break-search {
+		margin-right: 20px;
+	}
+	.glyphicon-menu-hamburger, .break-search {
+		@include break($tablet-sm) {
+			display: inline-block;
+		}
+	}
 }
 .header-nav { /* ul */
 	padding-left: 0;
 	font-size: 1.3em;
 	font-family: OpenSans-Semibold;
+	@include break($tablet-sm) {
+		display: none;
+	}
 	li {
 		list-style-type: none;
 		margin: 0;
@@ -89,7 +115,91 @@ nav {
 			width: 100%;	
 		}
 	}
-	.glyphicon-search {
+	.search-icon:after {
+		display: none;
+	}
+}
 
+// Flyout menu:
+span#shadowbox {
+	position: absolute;
+	transition: ease-in-out .5s;
+	&.visible {
+		transition: ease-in-out .5s;
+		background: rgba(0,0,0,.35);
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+.flyout-nav {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+}
+
+.flyout-nav ul#listMenu {
+	position: absolute;
+	background: #3c3c3c;
+	width: 250px;
+	top: 0;
+	bottom: 0;
+	transform: translateX(-250px);
+	overflow: auto;
+	box-shadow: 0 0 10px 0px rgba(0,0,0,0);
+	transition: ease-in-out .3s;
+	list-style-type: none;
+	margin: 0;
+	padding: 20px; 
+	&.listOpen {
+		transform: translateX(0);
+		box-shadow: 0 0 10px 0px rgba(0,0,0,.5);
+		transition: ease-in-out .3s;		
+	}
+
+	li {
+		width: 100%;
+		padding: 0 20px;
+		float: left;
+		box-sizing: border-box;
+		background: url('../../images/right-chevron.png') no-repeat center left;
+		&.home-link {
+			background: none;
+			text-align: center;
+			font-size: 1.2em;
+		}
+		&.flyout-searchbar {
+			background: none; 
+			padding: 0;
+			margin-top: 15px;
+			input {
+				width: 85%;
+				float: left;
+				border: 0;
+				background: rgba(white, .6);
+				padding: 6px; 
+				&:hover, &:focus {
+					background: rgba(white, .8);
+					outline: none;
+				}
+			}
+			.flyout-searchbutton {
+				width: 15%;
+				float: right;
+				background-color: green;
+			}
+		}
+		a {
+			width: 100%;
+			color: #fff;
+			float: left;
+			box-sizing: border-box;
+			margin: 10px 0;
+		}
+		&:last-child a {
+			border: none;
+		}
 	}
 }

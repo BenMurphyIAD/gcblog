@@ -15,11 +15,12 @@
     <![endif]-->
   </head>
   <body>
+    <span id="shadowbox" onclick="menuToggle()"></span>
 
     <section class="container-fluid header-bg nopad">
       <div class="header-wrapper">
 
-        <a href="#">
+        <a href="#" class="logo-link">
           <div class="logo-wrapper clearfix">
             <img src="images/oob-blog-logo.png" alt="Company" class="logo-img">
             <div class="logo-text">
@@ -29,21 +30,40 @@
           </div>
         </a>
 
-        <nav>
+        <nav class="top-nav">
           <ul class="header-nav clearfix">
             <li><a href="#" class="selected">Latest News</a></li>
             <li><a href="#">Press</a></li>
             <li><a href="#">Community</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li><a href="#" class="search-icon"><span class="glyphicon glyphicon-search"></span></a></li>
           </ul>
+          <a href="#" class="menu-link" onclick="menuToggle()" id="navBtn">
+            <span class="glyphicon glyphicon-menu-hamburger"></span>
+            <span class="glyphicon glyphicon-search break-search"></span></a>
+          </a>
         </nav>
 
       </div>
     </section>
 
+    <nav class="flyout-nav">
+      <ul id="listMenu">
+        <li class="home-link"><a href="#"><span class="glyphicon glyphicon-home"></span>
+        <li><a href="#" class="selected">Latest News</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Community</a></li>
+        <li class="flyout-searchbar clearfix"><input type="text" name="fname" placeholder="Search..."><input type="submit" class="flyout-searchbutton" value="Submit"></li>
+      </ul>
+    </nav>
+
     <h1>Hello, world!</h1>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/offscreen-menu.js"></script>
+
+    <script>
+      
+    </script>
   </body>
 </html>

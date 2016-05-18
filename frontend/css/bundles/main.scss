@@ -1,17 +1,19 @@
-@import '../partials/_variables';
+@import '../modules/_variables';
 @import '../partials/_header';
+@import '../partials/_featured';
 
 * {
-  -webkit-transition: all 0.25s ease;
-  -moz-transition:    all 0.25s ease;
-  -ms-transition:     all 0.25s ease;
-  -o-transition:      all 0.25s ease;
+	transition: all 0.25s ease;
+	/*@include break($tablet-sm) {
+		transition: none;
+	}*/
 }
 body {
 	font-size: 16px;
 	font-family: OpenSans;
 	min-height: 10000px;
 	color: $darkgrey;
+	min-width: 320px;
 }
 
 .nopad {
