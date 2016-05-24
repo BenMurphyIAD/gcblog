@@ -82,7 +82,7 @@
 			
 			display: block;
 			margin: 0 20px; 
-			&:hover {
+			&:hover, &:focus {
 				text-decoration: none;
 			}
 			&:after {
@@ -152,7 +152,8 @@ span#shadowbox {
 	transition: ease-in-out .3s;
 	list-style-type: none;
 	margin: 0;
-	padding: 20px; 
+	padding: 20px;
+	z-index: 999; 
 	&.listOpen {
 		transform: translateX(0);
 		box-shadow: 0 0 10px 0px rgba(0,0,0,.5);
@@ -175,20 +176,39 @@ span#shadowbox {
 			padding: 0;
 			margin-top: 15px;
 			input {
-				width: 85%;
-				float: left;
 				border: 0;
-				background: rgba(white, .6);
 				padding: 6px; 
+			}
+			.flyout-textbox {
+				width: 82.5%;
+				float: left;
+				background: rgba(white, .6);
+				&::-webkit-input-placeholder {
+				   color: $darkgrey;
+				}
+
+				&:-moz-placeholder { /* Firefox 18- */
+				   color: $darkgrey;  
+				}
+
+				&::-moz-placeholder {  /* Firefox 19+ */
+				   color: $darkgrey;  
+				}
+
+				&:-ms-input-placeholder {  
+				   color: $darkgrey;  
+				}
 				&:hover, &:focus {
 					background: rgba(white, .8);
 					outline: none;
 				}
 			}
 			.flyout-searchbutton {
-				width: 15%;
+				width: 17.5%;
 				float: right;
-				background-color: green;
+				background: rgba(white,.25) url('../../images/magnifying-glass.png') no-repeat center center;
+				color: transparent;
+
 			}
 		}
 		a {
@@ -203,3 +223,4 @@ span#shadowbox {
 		}
 	}
 }
+

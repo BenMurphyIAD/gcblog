@@ -8,6 +8,7 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bundles/main.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -15,8 +16,8 @@
     <![endif]-->
   </head>
   <body>
-    <span id="shadowbox" onclick="menuToggle()"></span>
 
+    <!-- Header -->
     <section class="container-fluid header-bg nopad">
       <div class="header-wrapper">
 
@@ -37,7 +38,7 @@
             <li><a href="#">Community</a></li>
             <li><a href="#" class="search-icon"><span class="glyphicon glyphicon-search"></span></a></li>
           </ul>
-          <a href="#" class="menu-link" onclick="menuToggle()" id="navBtn">
+          <a class="menu-link" onclick="menuToggle()" id="navBtn">
             <span class="glyphicon glyphicon-menu-hamburger"></span>
             <span class="glyphicon glyphicon-search break-search"></span></a>
           </a>
@@ -46,24 +47,94 @@
       </div>
     </section>
 
+    <!-- Featured Section -->
+    <section class="featured">
+
+      <div class="header-wrapper clearfix row-centered">
+        <h2 class="featured-header">Featured</h2>
+        <div class="carousel-arrows clearfix"></div>
+      </div>
+
+      <div class="container-fluid nopad">
+        <div class="featured-carousel">
+        
+          <div class="fc-item">
+            <img class="fc-image" src="images/stock-photos/pexels-photo.jpg">
+            <div class="fc-image-overlay"></div>
+            <div class="fc-text">
+              <h3 class="fc-title">Featured item title</h3>
+              <p class="fc-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at nulla dapibus, ullamcorper turpis eu, maximus tellus. Mauris ultrices ex a leo gravida, vel rutrum felis posuere. Phasellus vitae nibh tincidunt, euismod odio at, dapibus sapien. In rhoncus ornare leo.</p>
+              <a class="fc-link" href="#">Read More</a>
+            </div>
+          </div>
+
+          <div class="fc-item">
+            <img class="fc-image" src="images/stock-photos/hands-people-woman-working.jpg">
+            <div class="fc-image-overlay"></div>
+            <div class="fc-text">
+              <h3 class="fc-title">Featured item title</h3>
+              <p class="fc-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at nulla dapibus, ullamcorper turpis eu, maximus tellus. Mauris ultrices ex a leo gravida, vel rutrum felis posuere. Phasellus vitae nibh tincidunt, euismod odio at, dapibus sapien. In rhoncus ornare leo.</p>
+              <a class="fc-link" href="#">Read More</a>
+            </div>
+          </div>
+
+          <div class="fc-item">
+            <img class="fc-image" src="images/stock-photos/person-woman-hand-space.jpg">
+            <div class="fc-image-overlay"></div>
+            <div class="fc-text">
+              <h3 class="fc-title">Featured item title</h3>
+              <p class="fc-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at nulla dapibus, ullamcorper turpis eu, maximus tellus. Mauris ultrices ex a leo gravida, vel rutrum felis posuere. Phasellus vitae nibh tincidunt, euismod odio at, dapibus sapien. In rhoncus ornare leo.</p>
+              <a class="fc-link" href="#">Read More</a>
+            </div>
+          </div>
+
+          <div class="fc-item">
+            <img class="fc-image" src="images/stock-photos/people-office-group-team.jpg">
+            <div class="fc-image-overlay"></div>
+            <div class="fc-text">
+              <h3 class="fc-title">Featured item title</h3>
+              <p class="fc-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at nulla dapibus, ullamcorper turpis eu, maximus tellus. Mauris ultrices ex a leo gravida, vel rutrum felis posuere. Phasellus vitae nibh tincidunt, euismod odio at, dapibus sapien. In rhoncus ornare leo.</p>
+              <a class="fc-link" href="#">Read More</a>
+            </div>
+          </div>
+
+          <div class="fc-item">
+            <img class="fc-image" src="images/stock-photos/sky-earth-space-working.jpg">
+            <div class="fc-image-overlay"></div>
+            <div class="fc-text">
+              <h3 class="fc-title">Featured item title</h3>
+              <p class="fc-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at nulla dapibus, ullamcorper turpis eu, maximus tellus. Mauris ultrices ex a leo gravida, vel rutrum felis posuere. Phasellus vitae nibh tincidunt, euismod odio at, dapibus sapien. In rhoncus ornare leo.</p>
+              <a class="fc-link" href="#">Read More</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="row-centered carousel-dots"></div>
+    </section>
+
+    <!-- Flyout navbar -->
+    <span id="shadowbox" onclick="menuToggle()"></span>
     <nav class="flyout-nav">
       <ul id="listMenu">
         <li class="home-link"><a href="#"><span class="glyphicon glyphicon-home"></span>
         <li><a href="#" class="selected">Latest News</a></li>
         <li><a href="#">Press</a></li>
         <li><a href="#">Community</a></li>
-        <li class="flyout-searchbar clearfix"><input type="text" name="fname" placeholder="Search..."><input type="submit" class="flyout-searchbutton" value="Submit"></li>
+        <li class="flyout-searchbar clearfix">
+          <input class="flyout-textbox" type="text" name="fname" placeholder="Search...">
+          <input class="flyout-searchbutton" type="submit" value="Submit">
+        </li>
       </ul>
     </nav>
 
-    <h1>Hello, world!</h1>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/offscreen-menu.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/offscreen-menu.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript" src="js/scripts-config.js"></script>
 
-    <script>
-      
-    </script>
   </body>
 </html>
